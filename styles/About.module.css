@@ -1,0 +1,53 @@
+.container {
+    width: 70%;
+    margin: 20px auto 80px;
+    min-height: 60vh;
+}
+
+.company {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23.44px;
+    margin: 20px 0;
+}
+
+.company span {
+    font-weight: 700;
+}
+
+.mark_list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+}
+
+.mark_list ul li {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+.company_names {
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+}
+
+.company_names li {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width:767px) {
+    .mark_list {
+        flex-direction: column;
+    }
+
+    .mark_list ul {
+        margin: 10px 0;
+    }
+}

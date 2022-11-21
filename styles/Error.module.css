@@ -1,0 +1,36 @@
+.error_wrapper {
+    min-height: 60vh;
+}
+
+.container {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container h1,
+.container h2,
+.container img {
+    font-size: 36px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    color: #00000099;
+    margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+
+    .container h1,
+    .container h2,
+    .container img {
+        font-size: 24px;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+        color: #00000099;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+}

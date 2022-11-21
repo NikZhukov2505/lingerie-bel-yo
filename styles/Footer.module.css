@@ -1,0 +1,153 @@
+.footer {
+    background: #202020;
+}
+
+.footer_container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footer_top_block {
+    padding: 46px 0 38px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.nav {
+    width: 20%;
+    margin: 0 auto 38px;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li {
+    flex: 0 1 33.3%;
+    list-style: none;
+    /* text-align: center; */
+}
+
+.menu__item {
+    display: block;
+    width: 100%;
+    color: #FFFFFF80;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.active {
+    color: #FFFFFF;
+}
+
+.footer_top_block p {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    width: 15%;
+    margin: 0 auto;
+    line-height: 19px;
+
+}
+
+.footer_bottom_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+
+}
+
+.footer_bottom_block div {
+    flex: 0 1 20%;
+}
+
+.footer_logo h2 {
+    font-size: 40px;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+}
+
+.footer_logo p {
+    font-size: 15px;
+    color: #fff;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+}
+
+.social_media {
+    margin: 0 auto;
+    flex: 0 1 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.footer_phones p {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    line-height: 28px;
+    text-align: right;
+}
+
+@media (max-width:992px) {
+    .nav {
+        width: 40%;
+    }
+
+    .footer_top_block p {
+        width: 30%;
+    }
+}
+
+@media (max-width:767px) {
+    .footer_top_block {
+        flex-direction: row;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .footer_logo h2 {
+        font-size: 24px;
+    }
+
+    .footer_logo p {
+        font-size: 12px;
+    }
+
+    .social_media {
+        justify-content: space-between;
+    }
+
+    .footer_bottom_block div {
+        flex: 0 1 30%;
+    }
+
+    .footer_phones p {
+        font-size: 15px;
+    }
+
+    .contacts_link {
+        display: none;
+    }
+}

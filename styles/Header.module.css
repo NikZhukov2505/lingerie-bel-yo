@@ -1,0 +1,280 @@
+.header {
+    width: 100%;
+    height: 75vh;
+    background: center / cover no-repeat;
+    padding-bottom: 150px;
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0px auto;
+    padding: 20px 0;
+}
+
+.logo a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_logo {
+    width: 100px;
+    height: 100px;
+}
+
+.logo_text {
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 700;
+    color: #202020;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav {
+    flex: 0 1 23%;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu__item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #00000080;
+}
+
+.active {
+    color: #000;
+}
+
+.space {
+    flex: 0 1 15%;
+}
+
+.search_block {
+    flex: 0 1 25%;
+}
+
+
+.search {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #202020;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #202020;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+    background: url('../public/search_icon.png') no-repeat center;
+    background-position: 2%;
+    padding: 0 20px 0 50px;
+    caret-color: red;
+}
+
+.header_basket_block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 1 10%;
+    position: relative;
+}
+
+.header_basket_count {
+    position: relative;
+}
+
+.total_count {
+    position: absolute;
+    top: -40%;
+    right: -30%;
+    background-color: red;
+    border-radius: 50%;
+    font-size: 13px;
+    font-family: 'Inter';
+    font-weight: 600;
+    padding: 3px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
+.header_bottom_block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.div_none {
+    display: none;
+}
+
+.text1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 64px;
+    line-height: 79.23px;
+    width: 30%;
+    margin-left: 50px;
+    animation: text1 2s linear infinite alternate;
+}
+
+@keyframes text1 {
+    from {
+        transform: rotate(2deg);
+
+    }
+
+    to {
+        transform: scale(1.1) rotate(-2deg);
+
+    }
+}
+
+.text2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 86px;
+    line-height: 118.85px;
+    width: 30%;
+    color: #00000080;
+    animation: text2 2s linear infinite alternate;
+}
+
+
+@keyframes text2 {
+    from {
+        transform: rotate(-2deg);
+    }
+
+    to {
+        transform: scale(1.1) rotate(2deg);
+    }
+}
+
+.connection {
+    display: flex;
+    align-items: center;
+    /* position: relative; */
+    cursor: pointer;
+}
+
+.number {
+    color: #fff;
+    background-color: #000;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    line-height: 28.13px;
+    border-radius: 10px;
+    padding: 15px;
+    position: absolute;
+    bottom: -220%;
+    right: 0;
+}
+
+@media (max-width:1400px) {
+    .text1 {
+        font-size: 50px;
+    }
+
+    .text2 {
+        font-size: 70px;
+    }
+}
+
+@media (max-width:1200px) {
+    .text1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .text2 {
+        font-size: 55px;
+        line-height: 60px;
+    }
+
+    .space {
+        flex: 0 1 30%;
+    }
+
+    .header_wrapper {
+        width: 95%;
+    }
+
+}
+
+@media (max-width:992px) {
+    .text1 {
+        margin-left: 30px;
+        line-height: 45px;
+    }
+
+    .text2 {
+        font-size: 45px;
+        line-height: 45px;
+    }
+
+    .menu__item {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:767px) {
+    .header_wrapper {
+        align-items: center;
+    }
+
+    .img_logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .header_basket_block {
+        justify-content: flex-start;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .space {
+        display: none;
+    }
+
+    .search_block {
+        display: none;
+    }
+
+    .connection {
+        display: none;
+    }
+
+    .text1 {
+        margin-left: 0px;
+        width: 50%;
+        font-size: 32px;
+        animation: none;
+        line-height: 39.62px;
+    }
+
+    .text2 {
+        font-size: 20px;
+        animation: none;
+        line-height: 29.71px;
+        align-self: flex-end;
+        margin-bottom: 100px;
+    }
+}
