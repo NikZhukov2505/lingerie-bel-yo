@@ -9,7 +9,7 @@ const Random = ({ random }) => {
             {random?.length > 0 ? random.map(p => (
                 <div className={styles.product_card} key={p.id}>
                     <Link href={`/product/${p.id}`} >
-                        <Image
+                        {p?.image ? <Image
                             className={styles.card_img}
                             src={p.image}
                             width={200}
@@ -18,7 +18,7 @@ const Random = ({ random }) => {
                             layout='responsive'
                             unoptimized={true}
                             priority
-                        />
+                        /> : null}
                     </Link>
                     <div className={p.is_new || p.discount ? styles.new_or_discount : null}>
                         <span>{p.is_new ? 'NEW ' : null}</span>

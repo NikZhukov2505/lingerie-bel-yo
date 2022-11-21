@@ -16,13 +16,13 @@ const Home = () => {
     <main className={styles.main_wrapper}>
       <Head>
         <title>Главная</title>
-        <link rel="icon" type='image/png' href={`http://195.38.164.87:8000${info?.logo}`} />
+        <link rel="icon" type='image/png' href={info?.logo ? `http://195.38.164.87:8000${info?.logo}` : ''} />
         <meta name='author' content={info.company_name} />
         <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
         <meta name='keywods' content={keyWords.join(' ')} />
-        <meta property="og:image" content={`http://195.38.164.87:8000${info?.logo}`} />
+        <meta property="og:image" content={info?.logo ? `http://195.38.164.87:8000${info?.logo}` : ''} />
         <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
-        <meta property="og:title" content={info.company_name} />
+        <meta property="og:title" content={info?.company_name} />
         <meta property='og:url' content='http://www.underwearitaly.com/' />
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='underwearitaly.com - Интернет магазин женского нижнего бельья' />
