@@ -56,6 +56,20 @@ const InfoDetail = ({ product }) => {
                                     modules={[EffectFade, Navigation, Pagination]}
                                     className={styles.my_swiper}
                                 >
+                                    <SwiperSlide>
+                                        <a className='gallery_item' href={product?.image}>
+                                            <Image
+                                                src={product?.image}
+                                                loader={() => product?.image}
+                                                alt={product.name}
+                                                width={100}
+                                                height={100}
+                                                unoptimized={true}
+                                                priority
+                                                className={styles.swiper_img}
+                                            />
+                                        </a>
+                                    </SwiperSlide>
                                     {
                                         product?.product_images?.length > 0 && product?.product_images?.map(img => (
                                             <SwiperSlide key={img?.id}>
