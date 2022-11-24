@@ -116,6 +116,7 @@
 
     .product_card h2 {
         font-size: 17px;
+        height: 40px;
     }
 
     .total {
