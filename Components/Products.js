@@ -10,7 +10,7 @@ const Products = () => {
         <div className={styles.container}>
             {products?.length > 0 ? products.map(p => (
                 <div className={styles.product_card} key={p.id}>
-                    <Link href={`/product/${p.id}`} target='_blank'>
+                    <Link href={`/product/${p.id}`}>
                         {p?.image ? <Image
                             className={styles.card_img}
                             src={p.image}

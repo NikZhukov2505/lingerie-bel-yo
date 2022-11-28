@@ -7,6 +7,7 @@ const initialState = {
     product: {},
     random: null,
     keyWords: [],
+    currentPage: 1,
     order: '',
     categoryName: '',
     items: []
@@ -19,6 +20,7 @@ const SET_KEY_WORDS = 'SET_KEY_WORDS'
 const SET_ORDER = 'SET_ORDER'
 const SET_CATEGORY_NAME = 'SET_CATEGORY_NAME'
 const SET_ITEM = 'SET_ITEM'
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE'
 
 const lingerieReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -62,6 +64,11 @@ const lingerieReducer = (state = initialState, action) => {
                 ...state,
                 categoryName: action.categoryName
             }
+        case SET_CURRENT_PAGE:
+            return {
+                ...state,
+                currentPage: action.page
+            }
         default:
             return state
     }
@@ -75,13 +82,13 @@ const setRandom = (random) => ({ type: SET_RANDOM, random })
 export const setOrder = (name) => ({ type: SET_ORDER, name })
 export const setCategoryName = (categoryName) => ({ type: SET_CATEGORY_NAME, categoryName })
 export const setItems = (items) => ({ type: SET_ITEM, items })
+export const setCurrentPage = (page) => ({ type: SET_CURRENT_PAGE, page })
 
 
 export const getRandomProducts = () => async (dispatch) => {
     const data = await allAPIs.getRandom()
     dispatch(setRandom(data))
 }
-
 export const getProducts = (page, order, categoryName) => async (dispatch) => {
     const data = await allAPIs.getAllProducts(page, order, categoryName)
     dispatch(setProducts(data))

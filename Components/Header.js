@@ -5,7 +5,7 @@ import styles from '../styles/Header.module.css'
 import Navigation from './Navigation';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
-import { searchProducts, setCategoryName, setOrder } from '../redux/reducers/lingerie-reducer';
+import { searchProducts, setCategoryName, setCurrentPage, setOrder } from '../redux/reducers/lingerie-reducer';
 import { getProducts, setItems } from './../redux/reducers/lingerie-reducer';
 
 
@@ -35,6 +35,7 @@ const Header = () => {
     const search = (e) => {
         dispatch(setOrder(''))
         dispatch(setCategoryName(''))
+        dispatch(setCurrentPage(1))
         e.target.value.length >= 3 ? dispatch(searchProducts(e.target.value)) : dispatch(getProducts())
     }
 
