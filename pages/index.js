@@ -7,11 +7,14 @@ import { getInfoStore } from './../redux/reducers/info-reducer';
 import Products from '../Components/Products';
 import { useSelector } from 'react-redux';
 import Paginator from '../Components/Pagination';
+import { useState } from 'react';
 
 
 const Home = () => {
   const { products, categoryList, keyWords } = useSelector(state => state?.lingerie)
   const { info } = useSelector(state => state?.info)
+  const [currentPage, setCurrentPage] = useState(1)
+
   return (
     <main className={styles.main_wrapper}>
       <Head>
@@ -27,9 +30,9 @@ const Home = () => {
         <meta property='og:type' content='website' />
         <meta property='og:site_name' content='underwearitaly.com - Интернет магазин женского нижнего бельья' />
       </Head>
-      <ListProducts list={categoryList} />
+      <ListProducts setCurrentPage={setCurrentPage} list={categoryList} />
       <Products products={products.results} />
-      <Paginator />
+      <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </main>
   )
 }

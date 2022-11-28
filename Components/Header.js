@@ -35,7 +35,6 @@ const Header = () => {
     const search = (e) => {
         dispatch(setOrder(''))
         dispatch(setCategoryName(''))
-        dispatch(setCurrentPage(1))
         e.target.value.length >= 3 ? dispatch(searchProducts(e.target.value)) : dispatch(getProducts())
     }
 

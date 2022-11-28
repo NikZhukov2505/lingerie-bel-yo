@@ -2,23 +2,23 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import styles from '../styles/List.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { getOrdering, getProducts, getProductsByCategory, setCategoryName, setOrder, searchProducts, setCurrentPage } from './../redux/reducers/lingerie-reducer';
+import { getOrdering, getProducts, getProductsByCategory, setCategoryName, setOrder, searchProducts } from './../redux/reducers/lingerie-reducer';
 
-const ListProducts = ({ list }) => {
+const ListProducts = ({ list, setCurrentPage }) => {
     const [bg, setBg] = useState(false)
     const { order } = useSelector(state => state?.lingerie)
     const [showOrder, setShowOrder] = useState(false)
     const dispatch = useDispatch()
 
     const ordering = (name) => {
-        dispatch(setCurrentPage(1))
+        setCurrentPage(1)
         dispatch(getOrdering(name))
         setShowOrder(!showOrder)
         dispatch(setCategoryName(''))
     }
     const showProductCategory = (categoryName) => {
         dispatch(setOrder(''))
-        dispatch(setCurrentPage(1))
+        setCurrentPage(1)
         setShowOrder(false)
         dispatch(getProductsByCategory(categoryName))
     }
@@ -26,7 +26,7 @@ const ListProducts = ({ list }) => {
     const search = (e) => {
         dispatch(setOrder(''))
         dispatch(setCategoryName(''))
-        dispatch(setCurrentPage(1))
+        setCurrentPage(1)
         e.target.value.length >= 3 ? dispatch(searchProducts(e.target.value)) : dispatch(getProducts())
     }
     return (
@@ -54,7 +54,7 @@ const ListProducts = ({ list }) => {
                                     dispatch(setOrder(''))
                                     setShowOrder(false)
                                     dispatch(getProducts())
-                                    dispatch(setCurrentPage(1))
+                                    setCurrentPage(1)
                                 }}>Все товары</li>
                             </label>
                             {list && list.map(c => (
