@@ -80,17 +80,15 @@ const Product = () => {
             <InfoDetail product={product} />
             <h2 className={styles.see_more}>Смотреть еще</h2>
             <Random random={random} />
-            <Link href="#top">
-                <div className={styles.arrow_up}>
-                    <span>Вверх</span>
-                    <Image
-                        src={'/arrow_close.png'}
-                        width={30}
-                        height={30}
-                        alt={'up'}
-                    />
-                </div>
-            </Link>
+            <div onClick={() => window.scrollTo(0, 0)} className={styles.arrow_up}>
+                <span>Вверх</span>
+                <Image
+                    src={'/arrow_close.png'}
+                    width={30}
+                    height={30}
+                    alt={'up'}
+                />
+            </div>
         </div>
     );
 };

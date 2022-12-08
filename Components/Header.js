@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 import { searchProducts, setCategoryName, setCurrentPage, setOrder } from '../redux/reducers/lingerie-reducer';
 import { getProducts, setItems } from './../redux/reducers/lingerie-reducer';
+import 'animate.css'
 
 
 
@@ -98,7 +99,7 @@ const Header = () => {
                             height={14}
                             layout='responsive'
                         />
-                        <span style={{ display: showPhones ? 'inline' : 'none' }} className={styles.number}><a href={`tel:${info?.phone_number}`}>{info?.phone_number}</a></span>
+                        <span style={{ display: showPhones ? 'inline' : 'none' }} className={`${styles.number} animate__animated animate__flipInX`}><a href={`tel:${info?.phone_number}`}>{info?.phone_number}</a></span>
                     </div>
                 </div>
             </div>

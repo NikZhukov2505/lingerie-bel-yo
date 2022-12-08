@@ -259,6 +259,7 @@
     display: flex;
     align-items: center;
     padding: 20px 0;
+    cursor: pointer;
 }
 
 .arrow_up span {
@@ -365,4 +366,7 @@
         margin: 0 auto;
     }
 
+    .arrow_up span {
+        font-size: 16px;
+    }
 }

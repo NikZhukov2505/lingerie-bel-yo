@@ -1,13 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import styles from '../styles/Product.module.css'
 
 const Random = ({ random }) => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.container_margin}`}>
             {random?.length > 0 ? random.map(p => (
-                <div className={styles.product_card} key={p.id}>
+                <AnimationOnScroll className={styles.product_card} animateIn="animate__flipInY" key={p.id}>
                     <Link href={`/product/${p.id}`} >
                         {p?.image ? <Image
                             className={styles.card_img}
@@ -31,7 +32,7 @@ const Random = ({ random }) => {
                             <p className={styles.discount}>{p.discount > 0 ? p.price : null}</p>
                         </div>
                     </div>
-                </div>
+                </AnimationOnScroll>
             ))
                 :
                 <h1>Товар не найден!</h1>

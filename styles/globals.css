@@ -16,17 +16,72 @@ a {
 }
 
 body {
-  /* background: linear-gradient(90deg, #a3fae0d6 0%, #f99de7dd 100%); */
-  /* background: url('../public/pink2.jpg') center / cover no-repeat;
-  background-attachment: fixed; */
-  background: linear-gradient(90deg, rgba(255, 229, 180, 1) 0%, rgba(255, 204, 153, 1) 100%);
+  background: linear-gradient(89deg, #a2f4f9, #f9d4f8, #ffe5ba, #ffdcba);
+  background-size: 800% 800%;
+
+  -webkit-animation: bgFone 15s ease infinite;
+  -moz-animation: bgFone 15s ease infinite;
+  -o-animation: bgFone 15s ease infinite;
+  animation: bgFone 15s ease infinite;
 }
 
-/* @media (max-width:992px) {
-  body {
-    background-position: right;
+
+@-webkit-keyframes bgFone {
+  0% {
+    background-position: 0% 52%
   }
-} */
+
+  50% {
+    background-position: 100% 49%
+  }
+
+  100% {
+    background-position: 0% 52%
+  }
+}
+
+@-moz-keyframes bgFone {
+  0% {
+    background-position: 0% 52%
+  }
+
+  50% {
+    background-position: 100% 49%
+  }
+
+  100% {
+    background-position: 0% 52%
+  }
+}
+
+@-o-keyframes bgFone {
+  0% {
+    background-position: 0% 52%
+  }
+
+  50% {
+    background-position: 100% 49%
+  }
+
+  100% {
+    background-position: 0% 52%
+  }
+}
+
+@keyframes bgFone {
+  0% {
+    background-position: 0% 52%
+  }
+
+  50% {
+    background-position: 100% 49%
+  }
+
+  100% {
+    background-position: 0% 52%
+  }
+}
+
 
 main {
   min-height: 70vh;
@@ -67,6 +122,7 @@ main {
     width: 320px;
     height: 400px;
   }
+
 }
 
 .lg-backdrop.in {

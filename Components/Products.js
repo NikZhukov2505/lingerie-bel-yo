@@ -3,13 +3,15 @@ import React from 'react';
 import styles from '../styles/Product.module.css'
 import { useSelector } from 'react-redux';
 import Link from 'next/link';
+import 'animate.css'
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 const Products = () => {
     const products = useSelector(state => state?.lingerie?.products?.results)
     return (
-        <div className={styles.container}>
+        <div id='top_test' className={styles.container}>
             {products?.length > 0 ? products.map(p => (
-                <div className={styles.product_card} key={p.id}>
+                <AnimationOnScroll className={styles.product_card} key={p.id} animateIn="animate__flipInY">
                     <Link href={`/product/${p.id}`}>
                         {p?.image ? <Image
                             className={styles.card_img}
@@ -33,7 +35,7 @@ const Products = () => {
                             <p className={styles.discount}>{p.discount > 0 ? p.price : null}</p>
                         </div>
                     </div>
-                </div>
+                </AnimationOnScroll>
             ))
                 :
                 <h1 className={styles.none}>Товар не найден!</h1>
