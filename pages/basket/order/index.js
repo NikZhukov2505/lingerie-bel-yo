@@ -13,7 +13,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setItems } from './../../../redux/reducers/lingerie-reducer';
 
 const Order = () => {
-    const { keyWords } = useSelector(state => state?.lingerie)
     const { info } = useSelector(state => state.info)
     const dispatch = useDispatch()
     const router = useRouter()
@@ -82,10 +81,9 @@ const Order = () => {
                 <title>Корзина</title>
                 <link rel="icon" type='image/png' href={`http://195.38.164.87:8000${info?.logo}`} />
                 <meta name='author' content={info.company_name} />
-                <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
-                <meta name='keywods' content={keyWords.join(' ')} />
+                <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье Купить в Бишкеке'} />
                 <meta property="og:image" content={`http://195.38.164.87:8000${info?.logo}`} />
-                <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
+                <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье Купить в Бишкеке'} />
                 <meta property="og:title" content={info.company_name} />
                 <meta property='og:url' content='http://www.underwearitaly.com/basket/order/' />
                 <meta property='og:type' content='website' />

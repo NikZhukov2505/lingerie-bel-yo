@@ -25,7 +25,7 @@ const Random = ({ random }) => {
                         <span>{p.is_new ? 'NEW ' : null}</span>
                         <span>{p.discount > 0 ? ` ${p.discount}%` : null}</span>
                     </div>
-                    <h2>{p.name}</h2>
+                    <h4>{p.name}</h4>
                     <div className={styles.price_block}>
                         <div className={styles.price}>
                             <p className={styles.total}>{Math.ceil(p.total_price)}с</p>

@@ -1,16 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { wrapper } from '../redux';
 import styles from '../styles/Contacts.module.css'
 import { getInfoStore } from './../redux/reducers/info-reducer';
 import Head from 'next/head';
 import { getWords } from './../redux/reducers/lingerie-reducer';
-import { useSelector } from 'react-redux';
 
 
 const Contacts = ({ info }) => {
-    const { keyWords } = useSelector(state => state.lingerie)
 
     return (
         <div className={styles.contacts_wrapper}>
@@ -18,10 +16,9 @@ const Contacts = ({ info }) => {
                 <title>Контакты</title>
                 <link rel="icon" type='image/png' href={`http://195.38.164.87:8000${info?.logo}`} />
                 <meta name='author' content={info.company_name} />
-                <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
-                <meta name='keywods' content={keyWords.join(' ')} />
+                <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье Купить в Бишкеке'} />
                 <meta property="og:image" content={`http://195.38.164.87:8000${info?.logo}`} />
-                <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + keyWords.join(' ') + ' Купить в Бишкеке'} />
+                <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье Купить в Бишкеке'} />
                 <meta property="og:title" content={info.company_name} />
                 <meta property='og:url' content='http://www.underwearitaly.com/contacts/' />
                 <meta property='og:type' content='website' />
@@ -66,15 +63,19 @@ const Contacts = ({ info }) => {
                     <p>{info.phone_number}</p>
                 </div>
             </div>
-            <div className={styles.map}>
-                <img
-                    src='/map2.png'
-                    alt={'map'}
-                    width={100}
-                    height={100}
-                />
+            <div className={styles.mapouter}>
+                <div className={styles.gmap_canvas}>
+                    <iframe
+                        className={styles.gmap_iframe}
+                        width="100%"
+                        frameBorder="0"
+                        scrolling="yes"
+                        marginHeight="0"
+                        marginWidth="0"
+                        src='https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=ТАЦ Весна, 2 этаж, бутик В3 Бэль"Ё"&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+                    ></iframe>
+                </div>
             </div>
-
         </div>
     );
 };

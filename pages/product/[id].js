@@ -42,7 +42,7 @@ export const getStaticProps = wrapper.getStaticProps((store) => async (context) 
 })
 
 const Product = () => {
-    const { product, random, keyWords } = useSelector(state => state?.lingerie)
+    const { product, random } = useSelector(state => state?.lingerie)
     const { info } = useSelector(state => state.info)
     const router = useRouter()
 
@@ -61,14 +61,16 @@ const Product = () => {
     }
 
 
+    const keywordsString = product?.description?.split(" ").join(", ")
+
     return (
         <div className={styles.id_wrapper}>
             <Head>
                 <title>{product.name}</title>
                 <link rel="icon" type='image/png' href={`http://195.38.164.87:8000${info?.logo}`} />
                 <meta name='author' content={info.company_name} />
-                <meta name='description' content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + product.description + ' Купить в Бишкеке'} />
-                <meta name='keywods' content={keyWords.join(' ')} />
+                <meta name='description' content={product.name + ": " + product.description + ' Купить в Бишкеке'} />
+                <meta name='keywods' content={keywordsString} />
                 <meta property="og:image" content={`http://195.38.164.87:8000${info?.logo}`} />
                 <meta property="og:description" content={'Итальянское женское нижнее белье в Бишкеке, самые лучшие цены , французское белье, испанское белье' + product.description + ' Купить в Бишкеке'} />
                 <meta property="og:title" content={info.company_name} />
