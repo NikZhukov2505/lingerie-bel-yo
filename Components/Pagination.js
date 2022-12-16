@@ -35,7 +35,7 @@ const Paginator = ({ setCurrentPage, currentPage }) => {
                     setCurrentPage(page)
                     router.push(`/?page=${page}`, undefined, { shallow: true })
                     sessionStorage.setItem('pageKey', JSON.stringify({ page, currentPage: page, order, categoryName }))
-                    window.scrollTo(0, 0)
+                    window.scrollTo(0, 500)
                 }}
                 defaultPage={1}
                 page={currentPage}
